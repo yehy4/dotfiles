@@ -30,12 +30,8 @@ bind -r L resize-pane -R 5
 # Use vi keybindings in copy mode
 set -g mode-keys vi
 
-# Enter copy mode using escape
-unbind [
-bind Escape copy-mode
-
 # Make escape key responsive quickly (default is 500  milliseconds)
-set -sg escape-time 100
+set -sg escape-time 10
 
 # Select text in copy mode using v
 bind-key -T copy-mode-vi v send -X begin-selection
@@ -47,7 +43,7 @@ bind-key -T copy-mode-vi y send -X copy-selection
 unbind p
 bind p paste-buffer
 
-# Enable copy and paste when using tmux over ssh
+# Enable copy and paste to local system clipboard
 set -g set-clipboard on
 
 # Highlight the current active pane
