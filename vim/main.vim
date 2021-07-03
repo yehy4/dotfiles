@@ -50,6 +50,9 @@ set background=dark
 " Set color scheme
 colorscheme pablo
 
+" Source plugins
+exec 'source' expand("<sfile>:p:h") . '/plugins.vim'
+
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Allow intelligent auto-indenting for each filetype, and for 
 " plugins that are filetype specific.

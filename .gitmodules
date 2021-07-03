@@ -1,0 +1,3 @@
+[submodule "vim-oscyank"]
+	path = vim/plugins/pack/common/opt/vim-oscyank
+	url = https://github.com/ojroques/vim-oscyank
