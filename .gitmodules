@@ -1,3 +1,6 @@
 [submodule "vim-oscyank"]
 	path = vim/plugins/pack/common/opt/vim-oscyank
 	url = https://github.com/ojroques/vim-oscyank
+[submodule "sonokai"]
+	path = vim/plugins/pack/common/opt/sonokai
+	url = https://github.com/sainnhe/sonokai

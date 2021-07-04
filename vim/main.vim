@@ -73,18 +73,11 @@ set noswapfile
 " and outside tmux
 set background=dark
 
-" Set color scheme
-colorscheme pablo
-
 " Show cursor line
 set cursorline
 
 " Show a ruler at column 80
 set colorcolumn=80
-
-" Highlight trailing whitespaces
-highlight TrailingWhiteSpaces ctermbg=yellow
-match TrailingWhiteSpaces /\s\+$/
 
 " Prevent addition of two spaces after certain characters (period, for example)
 " when joining lines
