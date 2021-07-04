@@ -97,6 +97,9 @@ set scrolloff=3
 " Use tree view when interacting with netrw
 let g:netrw_liststyle=3
 
+" Search into subfolders recursively to provide tab completion for filenames
+set path=**
+
 " Source plugins
 execute 'source' expand("<sfile>:p:h") . '/plugins.vim'
 
