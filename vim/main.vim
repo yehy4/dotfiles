@@ -94,6 +94,9 @@ set nojoinspaces
 " Keep a few lines when scrolling off the page
 set scrolloff=3
 
+" Use tree view when interacting with netrw
+let g:netrw_liststyle=3
+
 " Source plugins
 execute 'source' expand("<sfile>:p:h") . '/plugins.vim'
 
