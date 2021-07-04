@@ -76,12 +76,11 @@ set background=dark
 " Set color scheme
 colorscheme pablo
 
-" Show cursor line and customize its color
+" Show cursor line
 set cursorline
 
 " Show a ruler at column 80
 set colorcolumn=80
-highlight ColorColumn ctermbg=darkgray
 
 " Highlight trailing whitespaces
 highlight TrailingWhiteSpaces ctermbg=yellow
@@ -100,6 +99,8 @@ let g:netrw_liststyle=3
 " Search into subfolders recursively to provide tab completion for filenames
 set path=**
 
+" Display status line
+execute 'source' expand("<sfile>:p:h") . '/statusline.vim'
+
 " Source plugins
 execute 'source' expand("<sfile>:p:h") . '/plugins.vim'
-

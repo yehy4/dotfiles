@@ -4,6 +4,6 @@ execute 'set' 'packpath+=' . expand("<sfile>:p:h") . '/plugins'
 if &loadplugins
   if has('packages')
     " Common plugins
-    packadd! vim-oscyank
+    packadd! vim-oscyank    " OSC52-based yanking
   endif
 endif
