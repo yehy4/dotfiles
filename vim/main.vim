@@ -92,6 +92,9 @@ let g:netrw_liststyle=3
 " Search into subfolders recursively to provide tab completion for filenames
 set path=**
 
+" Disable modeline due to security concerns
+set nomodeline
+
 " Display status line
 execute 'source' expand("<sfile>:p:h") . '/statusline.vim'
 
