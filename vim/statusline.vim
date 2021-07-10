@@ -25,8 +25,8 @@ set statusline+=\ %{toupper(g:currentmode[mode()])}
 set statusline+=\ \ %{fnamemodify(expand('%'),':.')}
 
 " Display hints on the file status
-set statusline+=%{&modified?'\ [+]':''}
-set statusline+=%{&readonly?'\ []':''}
+set statusline+=%{&modified?'\ \ [+]':''}
+set statusline+=%{&readonly?'\ \ []':''}
 
 " Separate left- and right-aligned items
 set statusline+=%=
