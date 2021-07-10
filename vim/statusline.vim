@@ -5,8 +5,9 @@ let g:currentmode={
        \ "\<C-V>" : 'VISUAL BLOCK',
        \ 'i'  : 'INSERT',
        \ 'R'  : 'REPLACE',
-       \ 'Rv' : 'VISUAL REPLACE',
+       \ 'Rv' : 'VIRTUAL REPLACE',
        \ 'c'  : 'COMMAND',
+       \ 'r'  : 'PROMPT',
        \}
 
 " Do not display mode because it will be shown in the status line
