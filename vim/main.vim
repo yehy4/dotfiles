@@ -89,6 +89,9 @@ set scrolloff=3
 " Use tree view when interacting with netrw
 let g:netrw_liststyle=3
 
+" Hide netrw banner
+let g:netrw_banner=0
+
 " Search into subfolders recursively to provide tab completion for filenames
 set path=**
 
