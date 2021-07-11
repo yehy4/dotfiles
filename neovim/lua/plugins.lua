@@ -9,4 +9,7 @@ end
 return require('packer').startup(function()
   -- Allow packer to update itself
   use 'https://github.com/wbthomason/packer.nvim'
+
+  -- Enable OSC52 yanking
+  use 'https://github.com/ojroques/vim-oscyank'
 end)
