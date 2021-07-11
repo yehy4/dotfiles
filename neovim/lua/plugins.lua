@@ -12,4 +12,10 @@ return require('packer').startup(function()
 
   -- Enable OSC52 yanking
   use 'https://github.com/ojroques/vim-oscyank'
+
+  -- Use GitHub theme
+  use {
+    'https://github.com/projekt0n/github-nvim-theme', 
+    config = function() require('github-theme').setup() end
+  }
 end)
