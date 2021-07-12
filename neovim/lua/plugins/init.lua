@@ -1,3 +1,4 @@
+-- Bootstrap Packer if it does not exist
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   print('Packer doesn\'t exist at: ' .. install_path .. '. Downloading...')
@@ -6,16 +7,12 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   print('Packer downloaded!')
 end
 
-return require('packer').startup(function()
-  -- Allow packer to update itself
-  use 'https://github.com/wbthomason/packer.nvim'
+local packer = require('packer')
+packer.init()
+packer.reset()
 
-  -- Enable OSC52 yanking
-  use 'https://github.com/ojroques/vim-oscyank'
+-- Allow Packer to manage itself
+packer.use('https://github.com/wbthomason/packer.nvim')
 
-  -- Use GitHub theme
-  use {
-    'https://github.com/projekt0n/github-nvim-theme', 
-    config = function() require('github-theme').setup() end
-  }
-end)
+require('plugins/common')
+require('plugins/treesitter')
