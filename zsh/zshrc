@@ -1,5 +1,6 @@
 # Aliases
 alias ls='ls --color=auto'
+alias gitlog='git log --all --graph --decorate --oneline'
 
 # Set history size loaded into the shell
 HISTSIZE=100000
