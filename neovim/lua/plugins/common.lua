@@ -12,7 +12,11 @@ packer.use({
 -- Use Lualine for status line
 packer.use( {
   'https://github.com/hoob3rt/lualine.nvim',
-  config = function () require('lualine').setup({options = {theme = 'material'}}) end
+  config = function ()
+    require('lualine').setup({
+      options = { theme = 'material', icons_enabled = false }
+    })
+  end
 })
 
 -- Use Tree-sitter for smarter syntax highlighting and code folding
