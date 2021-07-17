@@ -1,5 +1,5 @@
 # Aliases
-alias ls="ls --color=auto"
+alias ls='ls --color=auto'
 
 # Set history size loaded into the shell
 HISTSIZE=100000
@@ -12,10 +12,10 @@ SAVEHIST=1000000
 bindkey -v
 
 # Set editor to vim
-export EDITOR="/usr/bin/vim"
+export EDITOR='/usr/bin/vim'
 
 # Set shell to zsh
-export SHELL="/usr/bin/zsh"
+export SHELL='/usr/bin/zsh'
 
 # Enable command auto-completion
 autoload -Uz compinit
@@ -42,12 +42,12 @@ prompt adam1
 if (( ${+ZSH_SYNTAX_HIGHLIGHTING_PATH} )); then
   source $ZSH_SYNTAX_HIGHLIGHTING_PATH
 else
-    echo "Warning: zsh-syntax-highlighting path is undefined"
+    echo 'Warning: zsh-syntax-highlighting path is undefined'
 fi
 
 # Add autosuggestions
 if (( ${+ZSH_AUTOSUGGESTIONS_PATH} )); then
   source $ZSH_AUTOSUGGESTIONS_PATH
 else
-    echo "Warning: zsh-autosuggestions path is undefined"
+    echo 'Warning: zsh-autosuggestions path is undefined'
 fi
