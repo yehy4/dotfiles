@@ -15,4 +15,3 @@ packer.reset()
 packer.use('https://github.com/wbthomason/packer.nvim')
 
 require('plugins/common')
-require('plugins/treesitter')

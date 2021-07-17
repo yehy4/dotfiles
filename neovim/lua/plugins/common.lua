@@ -14,3 +14,14 @@ packer.use( {
   'https://github.com/hoob3rt/lualine.nvim',
   config = function () require('lualine').setup({options = {theme = 'material'}}) end
 })
+
+-- Use Tree-sitter for smarter syntax highlighting
+packer.use({
+    'https://github.com/nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function ()
+      require'nvim-treesitter.configs'.setup({
+       highlight = { enable = true },
+      })
+    end
+})
