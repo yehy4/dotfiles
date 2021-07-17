@@ -1,3 +1,1 @@
-require('settings')
-require('keybindings')
-require('plugins')
+lua/init/init.lua
