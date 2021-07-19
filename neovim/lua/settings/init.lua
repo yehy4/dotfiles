@@ -51,6 +51,9 @@ vim.api.nvim_set_var('netrw_liststyle', 3)
 -- Hide netrw banner
 vim.api.nvim_set_var('netrw_banner', false)
 
+-- Occupy only a small percentage of the screen when netrw is toggled
+vim.api.nvim_set_var('netrw_winsize', 15)
+
 -- Search into subfolders recursively to provide tab completion for filenames
 vim.o.path = '**'
 
