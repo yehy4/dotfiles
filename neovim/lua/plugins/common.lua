@@ -22,7 +22,8 @@ packer.use( {
       inactive_sections = {
         -- Display relative filepath in status line
         lualine_c = {{'filename', path = 1}}
-      }
+      },
+      extensions = {'nvim-tree'}
     })
   end
 })
