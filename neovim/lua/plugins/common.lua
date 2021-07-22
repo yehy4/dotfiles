@@ -53,7 +53,13 @@ packer.use({
     -- Enable creating more than 2 splits without asking where a new split
     -- should be created
     vim.g.nvim_tree_disable_window_picker = 1
-
+    -- Disable arrows next to folders
+    vim.g.nvim_tree_show_icons = {
+      git = 1,
+      folders = 1,
+      files = 1,
+      folder_arrows = 0
+    }
     -- Keybindings
     -- Use <leader>t to toggle
     vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<cr>', {noremap = true})
