@@ -1,11 +1,9 @@
-local packer = require('packer')
-
 -- Enable easy usage of LSPs
-packer.use({'https://github.com/neovim/nvim-lspconfig'})
+require('packer').use({'https://github.com/neovim/nvim-lspconfig'})
 
 local lsp = {}
 
--- The on_attach function should be called when a buffer attaches to the LSP. 
+-- The on_attach function should be called when a buffer attaches to the LSP.
 -- That way, the following keybindings will only be available to LSP client
 -- buffer after the language server attaches to the current buffer
 lsp.on_attach = function(client, bufnr)
