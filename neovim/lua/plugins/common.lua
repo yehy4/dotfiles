@@ -9,12 +9,15 @@ packer.use({
     config = function() require('github-theme').setup() end
 })
 
+-- Enable other plugins to display icons
+packer.use({'https://github.com/kyazdani42/nvim-web-devicons'})
+
 -- Use Lualine for status line
 packer.use( {
   'https://github.com/hoob3rt/lualine.nvim',
   config = function ()
     require('lualine').setup({
-      options = { theme = 'material', icons_enabled = false },
+      options = { theme = 'material' },
       sections = {
         -- Display relative filepath in status line
         lualine_c = {{'filename', path = 1}}
@@ -55,13 +58,6 @@ packer.use({
     -- Enable creating more than 2 splits without asking where a new split
     -- should be created
     vim.g.nvim_tree_disable_window_picker = 1
-    -- Disable arrows next to folders
-    vim.g.nvim_tree_show_icons = {
-      git = 1,
-      folders = 1,
-      files = 1,
-      folder_arrows = 0
-    }
     -- Keybindings
     -- Use <leader>t to toggle
     vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<cr>', {noremap = true})
