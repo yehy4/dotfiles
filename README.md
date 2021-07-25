@@ -18,7 +18,6 @@ files/directories for the tools above; rather, they augment them (see the
 [installation](#installation) section below for more details).
 
 ## Prerequisites
-
 1. [neovim](https://github.com/neovim/neovim) >=
    [**0.5**](https://github.com/neovim/neovim/releases/tag/v0.5.0)
 1. [tmux](https://github.com/tmux/tmux)
@@ -57,6 +56,10 @@ vim.o.runtimepath = configs_path .. ',' .. vim.o.runtimepath
 vim.o.runtimepath = configs_path .. '/after,' .. vim.o.runtimepath
 require('init')
 ```
+
+After running neovim for the first time, make sure to run `:PackerSync` (to
+download the required plugins) and restart neovim.
+
 ### tmux
 
 Add the following to your `~/.tmux.conf` file:
