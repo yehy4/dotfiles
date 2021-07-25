@@ -29,10 +29,10 @@ files/directories for the tools above; rather, they augment them (see the
    This allows you to copy text into your local system's clipboard regardless
    of how many nested remote SSH sessions you might have.
    * Example: [kitty](https://github.com/kovidgoyal/kitty) (cross-platform) or
-     [iTerm](https://github.com/gnachman/iTerm2) (macOS only). 
+     [iTerm](https://github.com/gnachman/iTerm2) (macOS only).
 1. A terminal that uses a font patched by [Nerd
 Fonts](https://github.com/ryanoasis/nerd-fonts). This allows you to have pretty
-icons in neovim. 
+icons in neovim.
     * Example: A [patched
       version](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures)
       of [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font with
@@ -61,7 +61,7 @@ require('init')
 
 Add the following to your `~/.tmux.conf` file:
 
-```
+```shell
 source <absolute_path_where_you_cloned_this_repo>/dotfiles/tmux/tmux.conf
 ```
 
@@ -69,7 +69,7 @@ source <absolute_path_where_you_cloned_this_repo>/dotfiles/tmux/tmux.conf
 
 Add the following to your `~/.config/fish/config.fish` file:
 
-```
+```fish
 source <absolute_path_where_you_cloned_this_repo>/dotfiles/fish/config.fish
 ```
 
@@ -78,11 +78,11 @@ source <absolute_path_where_you_cloned_this_repo>/dotfiles/fish/config.fish
 If you are using kitty as your terminal, add the following to your
 `~/.config/kitty/kitty.conf` file:
 
-```
+```shell
 include <absolute_path_where_you_cloned_this_repo>/dotfiles/kitty/kitty.conf
 ```
 
-### Pached JetBrains Mono font 
+### Pached JetBrains Mono font
 
 To download and install the [Nerd Fonts-patched
 version](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures)
@@ -90,10 +90,11 @@ of JetBrains Mono with ligatures support:
 
 On Linux, run `cd ~/.local/share/fonts`.
 
-On macOS, run `cd ~/Library/Fonts`. 
+On macOS, run `cd ~/Library/Fonts`.
 
 Now download the font by running:
-```
+
+```shell
 curl -Lo "JetBrains Mono Bold Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Bold/complete/JetBrains%20Mono%20Bold%20Nerd%20Font%20Complete.ttf
 curl -Lo "JetBrains Mono Bold Italic Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/BoldItalic/complete/JetBrains%20Mono%20Bold%20Italic%20Nerd%20Font%20Complete.ttf
 curl -Lo "JetBrains Mono ExtraBold Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/ExtraBold/complete/JetBrains%20Mono%20ExtraBold%20Nerd%20Font%20Complete.ttf
@@ -113,7 +114,7 @@ curl -Lo "JetBrains Mono Thin Italic Nerd Font Complete.ttf" https://github.com/
 If you are using [kitty](#kitty), add the following to
 `~/.config/fontconfig/fonts.conf`:
 
-```
+```xml
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
