@@ -7,7 +7,6 @@ function fish_prompt
 
   set_color brcyan
   fish_git_prompt
-  fish_hg_prompt
 
   set_color normal
   printf '\f\r|-> '
