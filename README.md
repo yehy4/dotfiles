@@ -75,6 +75,23 @@ Add the following to your `~/.config/fish/config.fish` file:
 ```fish
 source <absolute_path_where_you_cloned_this_repo>/dotfiles/fish/config.fish
 ```
+<details>
+  <summary>Setting fish as your default interactive shell</summary>
+
+  Add the following to the end of your `~/.bashrc`:
+
+  ```shell
+  # If running an interactive shell and if fish shell is installed, start
+  # fish. If the shell that called bash is already a fish shell, then do not
+  # drop into a fish shell. This allows the user to drop into a bash shell from
+  # within a fish shell.
+  FISH_PATH="$(which fish)"
+  if [[ "$-" =~ i && -x "${FISH_PATH}" && "${SHELL}" != "${FISH_PATH}" ]]; then
+    exec env SHELL="${FISH_PATH}" "${FISH_PATH}" -i
+  fi
+  ```
+</details>
+
 
 ### kitty
 
