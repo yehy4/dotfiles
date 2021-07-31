@@ -14,7 +14,7 @@ require('packer').use({
     vim.g.nvim_tree_disable_window_picker = 1
 
     vim.g.nvim_tree_show_icons = {
-      git = 1,
+      git = enable_git_features and 1 or 0,
       folders = 1,
       files = 1,
       folder_arrows = 0

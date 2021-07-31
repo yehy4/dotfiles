@@ -14,6 +14,8 @@ packer.reset()
 -- Allow Packer to manage itself
 packer.use('https://github.com/wbthomason/packer.nvim')
 
+enable_git_features = vim.env.GIT_BASED_WORKFLOW ~= '0'
+
 require('plugins/yank')
 require('plugins/icons')
 require('plugins/statusline')
