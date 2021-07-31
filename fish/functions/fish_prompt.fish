@@ -1,13 +1,13 @@
 function fish_prompt
-  echo -n (set_color magenta)\[(date "+%H:%M:%S")\]
-  echo -n (set_color bryellow) $USER@(prompt_hostname)
-  echo -n (set_color brgreen) $PWD
+  echo -n (set_color bryellow)$USER@(prompt_hostname)
 
-  set --global __fish_git_prompt_show_informative_status 1
+  set --global fish_prompt_pwd_dir_length 0  # Disable path shortening
+  echo -n (set_color brgreen) (prompt_pwd)
 
   set_color brcyan
+  set --global __fish_git_prompt_show_informative_status 1
   fish_git_prompt
 
   set_color normal
-  printf '\f\r|-> '
+  printf '\f\r--> '
 end
