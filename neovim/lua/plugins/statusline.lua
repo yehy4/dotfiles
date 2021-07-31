@@ -2,6 +2,11 @@
 require('packer').use( {
   'https://github.com/hoob3rt/lualine.nvim',
   config = function ()
+    local filename_section_settings = {
+      'filename',
+      path = 1 -- Use relative filepath
+    }
+
     require('lualine').setup({
       options = {
         theme = 'material',
@@ -9,12 +14,10 @@ require('packer').use( {
         component_separators = ''
       },
       sections = {
-        -- Display relative filepath in status line
-        lualine_c = {{'filename', path = 1}}
+        lualine_c = { filename_section_settings }
       },
       inactive_sections = {
-        -- Display relative filepath in status line
-        lualine_c = {{'filename', path = 1}}
+        lualine_c = { filename_section_settings }
       },
       extensions = {'nvim-tree'}
     })
