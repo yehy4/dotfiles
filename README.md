@@ -13,7 +13,7 @@ This workflow relies on the following tools:
 
 Because each development workflow is slightly different, these configuration
 files are designed with extensibility in mind. For example, the configuration
-files in this repository do not *replace* the default configuration
+files in this repository do not _replace_ the default configuration
 files/directories for the tools above; rather, they augment them (see the
 [installation](#installation) section below for more details).
 
@@ -72,6 +72,7 @@ source <absolute_path_where_you_cloned_this_repo>/dotfiles/tmux/tmux.conf
 Add the following to your `~/.config/fish/config.fish` file:
 
 ```fish
+set --global --export GIT_BASED_WORKFLOW 1
 source <absolute_path_where_you_cloned_this_repo>/dotfiles/fish/config.fish
 ```
 <details>
@@ -91,6 +92,9 @@ source <absolute_path_where_you_cloned_this_repo>/dotfiles/fish/config.fish
   ```
 </details>
 
+If your workflow does not involve using Git, change the value of
+`GIT_BASED_WORKFLOW` above to `0` instead of `1`. This could improve the
+performance of neovim and fish.
 
 ### kitty
 
