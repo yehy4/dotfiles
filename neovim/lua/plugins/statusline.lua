@@ -14,6 +14,7 @@ require('packer').use( {
         component_separators = ''
       },
       sections = {
+        lualine_b = enable_git_features and {'branch'} or {},
         lualine_c = { filename_section_settings }
       },
       inactive_sections = {
