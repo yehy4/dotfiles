@@ -56,3 +56,6 @@ vim.o.grepprg = 'rg --vimgrep --smart-case'
 
 -- Disable timeout when waiting for a sequence of keystrokes
 vim.o.timeout = false
+
+-- Disable shared data usage because it slows down quitting
+vim.o.shada = ''
