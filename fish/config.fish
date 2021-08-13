@@ -11,3 +11,8 @@ source $configs_dir/functions/fish_prompt.fish
 
 # Abbreviations
 abbr --global --add gitlog 'git log --all --graph --decorate --oneline'
+
+# Attach to a (newly-created or existing) tmux session called main
+if not set --query TMUX  # only execute if not already inside a tmux session
+  tmux new-session -A -s main
+end
