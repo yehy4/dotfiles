@@ -4,10 +4,9 @@ set --global fish_greeting ''
 # Use vi keybindings
 set --global fish_key_bindings fish_vi_key_bindings
 
+# Load custom functions
 set --local configs_dir (dirname (status --current-filename))
-
-# Set a custom prompt
-source $configs_dir/functions/fish_prompt.fish
+set --global --prepend fish_function_path $configs_dir/functions
 
 # Abbreviations
 abbr --global --add gitlog 'git log --all --graph --decorate --oneline'
