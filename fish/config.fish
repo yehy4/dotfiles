@@ -8,6 +8,9 @@ set --global fish_key_bindings fish_vi_key_bindings
 set --local configs_dir (dirname (status --current-filename))
 set --global --prepend fish_function_path $configs_dir/functions
 
+# Environment variables
+set --global --export EDITOR nvim
+
 # Abbreviations
 abbr --global --add gitlog 'git log --all --graph --decorate --oneline'
 
