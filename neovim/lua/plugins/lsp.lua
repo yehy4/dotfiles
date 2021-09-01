@@ -32,6 +32,7 @@ lsp.on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>l]D', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>ll', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", '<leader>lf', "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  buf_set_keymap("i", '<leader>lc', "<C-x><C-o>", opts)
 end
 
 return lsp
