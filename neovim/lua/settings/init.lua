@@ -15,8 +15,8 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Use 1 tab = 2 spaces
+vim.o.tabstop = 2
 vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
 vim.o.expandtab = true
 
 -- Enable code folding based on indent level
