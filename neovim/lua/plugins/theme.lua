@@ -1,5 +1,5 @@
--- Use GitHub theme
+-- Use custom theme
 require('packer').use({
-    'https://github.com/projekt0n/github-nvim-theme',
-    config = function() require('github-theme').setup() end
+    'https://github.com/glepnir/zephyr-nvim',
+    config = function() vim.cmd('colorscheme zephyr') end
 })
