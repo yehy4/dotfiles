@@ -35,8 +35,8 @@ vim.o.swapfile = false
 -- Show cursor line
 vim.o.cursorline = true
 
--- Show line length columns
-vim.o.colorcolumn = '81,101,121'
+-- Show line length limit columns
+vim.o.colorcolumn = '81,101'
 
 -- Prevent addition of two spaces after certain characters (period, for example)
 -- when joining lines
