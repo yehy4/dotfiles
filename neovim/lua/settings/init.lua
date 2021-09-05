@@ -63,3 +63,9 @@ vim.o.shada = ''
 -- Display popup menu for completion even when there is only one match.
 -- Show information about each completion item in preview window if available.
 vim.o.completeopt = 'menuone,preview,noselect'
+
+-- Indent wrapped lines and display an indicator before them
+vim.o.breakindent = true
+vim.o.breakindentopt = 'sbr'
+vim.o.showbreak = '↪ '
+vim.o.linebreak = true -- Prevent a word from getting split into two
