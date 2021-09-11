@@ -54,10 +54,25 @@ local configs_path = '<absolute_path_where_you_cloned_this_repo>/dotfiles/neovim
 vim.o.runtimepath = configs_path .. ',' .. vim.o.runtimepath
 vim.o.runtimepath = configs_path .. '/after,' .. vim.o.runtimepath
 require('init')
+
+-- Uncomment the following line to enable the Python workflow
+-- require('workflows/python')
 ```
 
 After running neovim for the first time, make sure to run `:PackerSync` (to
 download the required plugins) and restart neovim.
+
+#### Workflows
+
+To add support for specific workflows:
+
+1. Uncomment the workflows line in your `~/.config/nvim/init.lua`
+1. Follow the workflow-specific instructions below
+
+##### Python
+
+Ensure that [Python LSP
+Server](https://github.com/python-lsp/python-lsp-server) is installed.
 
 ### tmux
 
