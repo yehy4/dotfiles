@@ -52,7 +52,7 @@ vim.o.path = '**'
 vim.o.modeline = false
 
 -- Use ripgrep when searching using :grep or :lgrep
-vim.o.grepprg = 'rg --vimgrep --smart-case'
+vim.o.grepprg = 'grep --recursive --line-number'
 
 -- Disable timeout when waiting for a sequence of keystrokes
 vim.o.timeout = false
