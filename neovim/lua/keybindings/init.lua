@@ -1,5 +1,8 @@
 local keybindings = {}
 
+-- Set <leader> key to space
+vim.g.mapleader = ' '
+
 local function map_keys(mode, keys, command)
   vim.api.nvim_set_keymap(mode, keys, command, {noremap = true})
 end
