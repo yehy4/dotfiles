@@ -4,7 +4,7 @@ require('packer').use({
   opt = true, cmd = {'NvimTreeToggle', 'NvimTreeOpen'},
   setup = function ()
     -- Use <leader>t to toggle
-    vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<cr>', {noremap = true})
+    vim.api.nvim_set_keymap('n', '<leader>b', ':NvimTreeToggle<cr>', {noremap = true})
     end,
   config = function ()
     -- Show indentation marks for open folders
