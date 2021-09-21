@@ -1,7 +1,6 @@
 -- Use a better file explorer than the built-in netrw
 require('packer').use({
   'https://github.com/kyazdani42/nvim-tree.lua',
-  opt = true, cmd = {'NvimTreeToggle', 'NvimTreeOpen'},
   config = function ()
     -- Show indentation marks for open folders
     vim.g.nvim_tree_indent_markers = 1
@@ -15,5 +14,5 @@ require('packer').use({
       files = 1,
       folder_arrows = 0
     }
-    end
+  end
 })
