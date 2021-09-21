@@ -7,6 +7,7 @@ development workflow.
 
 This workflow relies on the following tools:
 * [neovim](https://github.com/neovim/neovim) for text-editing
+* [ripgrep](https://github.com/BurntSushi/ripgrep) for quick searching
 * [tmux](https://github.com/tmux/tmux) for terminal multiplexing
 * [fish shell](https://github.com/fish-shell/fish-shell) for a modern shell
   with low configuration overhead.
@@ -23,6 +24,7 @@ files/directories for the tools above; rather, they augment them (see the
 1. [tmux](https://github.com/tmux/tmux)
 1. [fish shell](https://github.com/fish-shell/fish-shell) (recommended >=
    [**3.0**](https://github.com/fish-shell/fish-shell/releases/tag/3.0.0))
+1. [ripgrep](https://github.com/BurntSushi/ripgrep)
 1. A terminal that supports
    [OSC52](https://www.reddit.com/r/vim/comments/k1ydpn/a_guide_on_how_to_copy_text_from_anywhere/).
    This allows you to copy text into your local system's clipboard regardless
