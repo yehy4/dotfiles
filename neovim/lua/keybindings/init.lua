@@ -8,16 +8,16 @@ local function map_keys(mode, keys, command)
 end
 
 -- Fuzzy search
-map_keys('n', '<leader>tg', ':Telescope live_grep<cr>')
+map_keys('n', '<leader>s', ':Telescope live_grep<cr>')
 
 -- Fuzzy search for files
-map_keys('n', '<leader>tf', ':Telescope find_file<cr>')
+map_keys('n', '<leader>f', ':Telescope find_files<cr>')
 
 -- Yank using OSC52 when in visual mode
 map_keys('v', '<leader>y', ':OSCYank<cr>')
 
--- Toggle directory browser tree
-map_keys('n', '<leader>b', ':NvimTreeToggle<cr>')
+-- Toggle directory tree
+map_keys('n', '<leader>t', ':NvimTreeToggle<cr>')
 
 -- Keybindings that are only available to the buffers attached to an LSP
 keybindings.activate_lsp_buffer_bindings = function(bufnr)
