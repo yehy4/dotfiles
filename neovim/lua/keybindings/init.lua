@@ -13,6 +13,15 @@ map_keys('n', '<leader>s', ':Telescope live_grep<cr>')
 -- Fuzzy search for files
 map_keys('n', '<leader>f', ':Telescope find_files<cr>')
 
+-- List Git modified files
+map_keys('n', '<leader>gs', ':Telescope git_status<cr>')
+
+-- List Git buffer commits
+map_keys('n', '<leader>gbc', ':Telescope git_bcommits<cr>')
+
+-- List Git commits
+map_keys('n', '<leader>gc', ':Telescope git_commits<cr>')
+
 -- Yank using OSC52 when in visual mode
 map_keys('v', '<leader>y', ':OSCYank<cr>')
 
