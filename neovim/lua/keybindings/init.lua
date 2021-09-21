@@ -8,10 +8,10 @@ local function map_keys(mode, keys, command)
 end
 
 -- Use <leader>tf to fuzzy search
-map_keys('n', '<leader>tg', ':Telescope live_grep theme=ivy<cr>')
+map_keys('n', '<leader>tg', ':Telescope live_grep<cr>')
 
 -- Use <leader>tf to for fuzzy file name search
-map_keys('n', '<leader>tf', ':Telescope find_files theme=ivy<cr>')
+map_keys('n', '<leader>tf', ':Telescope find_file<cr>')
 
 -- Use <leader>y to perform OSC52 yanking when in visual mode
 map_keys('v', '<leader>y', ':OSCYank<cr>')
