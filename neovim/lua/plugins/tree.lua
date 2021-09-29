@@ -14,5 +14,14 @@ require('packer').use({
       files = 1,
       folder_arrows = 0
     }
+
+    require('nvim-tree').setup({
+      -- Ensure that cursor does not cover icons
+      hijack_cursor = true,
+      -- Update the root directory of the tree when :cd is executed
+      update_cwd = true,
+      -- Show the current buffer in the tree
+      update_focused_file = {enable = true},
+    })
   end
 })
