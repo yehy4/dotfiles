@@ -22,6 +22,9 @@ require('packer').use({
       update_cwd = true,
       -- Show the current buffer in the tree
       update_focused_file = {enable = true},
+      -- Resize the tree after opening a file. Useful when manually expanding
+      -- the tree window to view deeply-nested directory structures.
+      view = {auto_resize = true},
     })
   end
 })
