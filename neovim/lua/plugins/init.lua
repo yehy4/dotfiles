@@ -24,3 +24,4 @@ require('plugins/tree')
 require('plugins/syntax')
 require('plugins/lsp')
 require('plugins/telescope')
+if enable_git_features then require('plugins/git') end
