@@ -13,7 +13,7 @@ require('packer').use( {
     require('lualine').setup({
       options = {
         theme = 'material',
-        section_separators = {'', ''},
+        section_separators = {left = '', right = ''},
         component_separators = ''
       },
       sections = {
