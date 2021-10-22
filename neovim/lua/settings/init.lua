@@ -73,6 +73,9 @@ vim.o.breakindentopt = 'sbr'
 vim.o.showbreak = '↪ '
 vim.o.linebreak = true -- Prevent a word from getting split into two
 
+-- Disable showing current mode below status line
+vim.o.showmode = false
+
 -- Automatically resize windows when available area is changed (e.g. when the
 -- terminal window is resized)
 vim.cmd('autocmd VimResized * wincmd =')
