@@ -6,11 +6,11 @@ require('packer').use {
       defaults = {
         layout_config = {
           -- Move prompt to on top of results
-          prompt_position = 'top',
+          prompt_position = 'top'
         },
         -- Display results from the top to bottom
         sorting_strategy = 'ascending'
-      },
+      }
     })
   end
 }

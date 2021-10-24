@@ -33,7 +33,7 @@ map_keys('n', '<leader>t', ':NvimTreeToggle<cr>')
 keybindings.activate_lsp_buffer_bindings = function(bufnr)
   local function buf_map_keys(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
-  local opts = { noremap=true, silent=true }
+  local opts = {noremap = true, silent = true}
   buf_map_keys('n', '<leader>lf', ':lua vim.lsp.buf.formatting()<CR>', opts)
   buf_map_keys('n', '<leader>lh', ':lua vim.lsp.buf.hover()<CR>', opts)
   buf_map_keys('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<CR>', opts)

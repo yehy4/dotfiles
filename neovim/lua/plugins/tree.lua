@@ -1,7 +1,7 @@
 -- Use a better file explorer than the built-in netrw
 require('packer').use({
   'https://github.com/kyazdani42/nvim-tree.lua',
-  config = function ()
+  config = function()
     -- Show indentation marks for open folders
     vim.g.nvim_tree_indent_markers = 1
     -- Enable creating more than 2 splits without asking where a new split
@@ -28,7 +28,7 @@ require('packer').use({
       update_focused_file = {enable = true},
       -- Resize the tree after opening a file. Useful when manually expanding
       -- the tree window to view deeply-nested directory structures.
-      view = {auto_resize = true},
+      view = {auto_resize = true}
     })
   end
 })
