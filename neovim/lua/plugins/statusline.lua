@@ -1,6 +1,6 @@
 -- Use Lualine for status line
 require('packer').use({
-  'https://github.com/hoob3rt/lualine.nvim',
+  'https://github.com/nvim-lualine/lualine.nvim',
   config = function()
     local filename_section_settings = {
       'filename',
