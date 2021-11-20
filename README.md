@@ -54,7 +54,6 @@ Add the following to your `~/.config/nvim/init.lua` file:
 ```lua
 local configs_path = '<absolute_path_where_you_cloned_this_repo>/dotfiles/neovim'
 vim.o.runtimepath = configs_path .. ',' .. vim.o.runtimepath
-vim.o.runtimepath = configs_path .. '/after,' .. vim.o.runtimepath
 require('init')
 
 -- Uncomment the following line to enable the Python workflow

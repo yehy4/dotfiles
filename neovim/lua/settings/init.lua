@@ -79,3 +79,7 @@ vim.o.showmode = false
 -- Automatically resize windows when available area is changed (e.g. when the
 -- terminal window is resized)
 vim.cmd('autocmd VimResized * wincmd =')
+
+-- Highlight trailing spaces
+vim.cmd('autocmd ColorScheme * highlight TrailingSpaces ctermbg=yellow guibg=yellow')
+vim.cmd('autocmd VimEnter,WinEnter * match TrailingSpaces /\\s\\+$/')
