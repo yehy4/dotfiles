@@ -28,7 +28,8 @@ require('packer').use({
       update_focused_file = {enable = true},
       -- Resize the tree after opening a file. Useful when manually expanding
       -- the tree window to view deeply-nested directory structures.
-      view = {auto_resize = true}
+      view = {auto_resize = true},
+      git = {enable = enable_git_features}
     })
   end
 })
