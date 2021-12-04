@@ -47,9 +47,6 @@ vim.o.path = '**'
 -- Disable modeline due to security concerns
 vim.o.modeline = false
 
--- Use ripgrep when searching using :grep or :lgrep
-vim.o.grepprg = 'rg --vimgrep --smart-case'
-
 -- Disable timeout when waiting for a sequence of keystrokes
 vim.o.timeout = false
 
