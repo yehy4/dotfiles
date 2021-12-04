@@ -6,9 +6,6 @@ vim.o.smartcase = true
 -- dialogue asking if you wish to save changed files.
 vim.o.confirm = true
 
--- Allow having multiple unsaved buffers in the same window
-vim.o.hidden = true
-
 -- Use relative line numbers for all lines but show absolute line number for
 -- the current line
 vim.o.number = true
@@ -40,10 +37,6 @@ vim.o.cursorline = true
 
 -- Show line length limit columns
 vim.o.colorcolumn = '81,101'
-
--- Prevent addition of two spaces after certain characters (period, for example)
--- when joining lines
-vim.o.joinspaces = false
 
 -- Keep a few lines when scrolling off the page
 vim.o.scrolloff = 3
