@@ -1,3 +1,6 @@
+-- Enable 24-bit colors
+vim.o.termguicolors = true
+
 -- Use case insensitive search, except when using capital letters
 vim.o.ignorecase = true
 vim.o.smartcase = true
