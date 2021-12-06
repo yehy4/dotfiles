@@ -45,9 +45,6 @@ keybindings.activate_lsp_buffer_bindings = function(bufnr)
   buf_map_keys('n', '<leader>ldc', ':lua vim.lsp.buf.declaration()<CR>', opts)
   buf_map_keys('n', '<leader>ldf', ':lua vim.lsp.buf.definition()<CR>', opts)
   buf_map_keys('n', '<leader>lD', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-
-  -- Omni complete
-  buf_map_keys('i', '<leader>lc', '<C-x><C-o>', opts)
 end
 
 return keybindings
