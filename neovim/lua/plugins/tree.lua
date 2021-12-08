@@ -1,6 +1,7 @@
 -- Use a better file explorer than the built-in netrw
 require('packer').use({
   'https://github.com/kyazdani42/nvim-tree.lua',
+  commit = 'b853e1083c67a79b4eb046a112a8e12b35e9cd19',
   config = function()
     -- Show indentation marks for open folders
     vim.g.nvim_tree_indent_markers = 1
@@ -14,6 +15,10 @@ require('packer').use({
       files = 1,
       folder_arrows = 0
     }
+
+    -- Refresh tree when focus is regained. This is useful, for example,
+    -- if files are modified outside of Neovim.
+    vim.cmd('autocmd FocusGained * :NvimTreeRefresh')
 
     require('nvim-tree').setup({
       -- Ensure that cursor does not cover icons
