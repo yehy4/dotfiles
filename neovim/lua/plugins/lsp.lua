@@ -1,4 +1,5 @@
-require('packer').use({'https://github.com/neovim/nvim-lspconfig'})
+local packer = require('packer')
+packer.use({'https://github.com/neovim/nvim-lspconfig'})
 
 local lsp = {}
 
@@ -11,7 +12,7 @@ lsp.on_attach = function(client, bufnr)
 end
 
 -- Enable auto completion.
-require('packer').use({
+packer.use({
   'https://github.com/hrsh7th/nvim-cmp',
   requires = {
     'https://github.com/hrsh7th/cmp-nvim-lsp', 'https://github.com/hrsh7th/cmp-buffer',
