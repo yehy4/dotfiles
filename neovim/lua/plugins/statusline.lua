@@ -8,7 +8,7 @@ require('packer').use({
     }
 
     local b_section = enable_git_features and {'branch', 'diff'} or {}
-    table.insert(b_section, {'diagnostics', sources = {'nvim_lsp'}})
+    table.insert(b_section, {'diagnostics', sources = {'nvim_diagnostic'}})
 
     require('lualine').setup({
       options = {
