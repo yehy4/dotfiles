@@ -31,12 +31,6 @@ files/directories for the tools above; rather, they augment them (see the
    of how many nested remote SSH sessions you might have.
    * Example: [kitty](https://github.com/kovidgoyal/kitty) (cross-platform) or
      [iTerm](https://github.com/gnachman/iTerm2) (macOS only).
-1. A terminal that uses a font patched by [Nerd
-Fonts](https://github.com/ryanoasis/nerd-fonts). This allows you to have pretty
-icons in neovim.
-    * Example: A [patched
-      version](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono)
-      of [Ubuntu Mono](https://fonts.google.com/specimen/Ubuntu+Mono).
 
 ## Installation
 
@@ -121,21 +115,8 @@ If you are using kitty as your terminal, add the following to your
 include <absolute_path_where_you_cloned_this_repo>/dotfiles/kitty/kitty.conf
 ```
 
-### Patched Ubuntu Mono Font
+### JetBrains Mono Font
 
-To download and install the [Nerd Fonts-patched
-version](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono)
-of Ubuntu Mono with ligatures support:
-
-On Linux, run `cd ~/.local/share/fonts`.
-
-On macOS, run `cd ~/Library/Fonts`.
-
-Now download the font by running:
-
-```shell
-curl -Lo "Ubuntu Mono Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf
-curl -Lo "Ubuntu Mono Italic Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular-Italic/complete/Ubuntu%20Mono%20Italic%20Nerd%20Font%20Complete.ttf
-curl -Lo "Ubuntu Mono Bold Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Bold/complete/Ubuntu%20Mono%20Bold%20Nerd%20Font%20Complete.ttf
-curl -Lo "Ubuntu Mono Bold Italic Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Bold-Italic/complete/Ubuntu%20Mono%20Bold%20Italic%20Nerd%20Font%20Complete.ttf
-```
+[Download](https://github.com/JetBrains/JetBrainsMono/releases/latest) the
+JetBrains Mono font with ligatures support. To install, unzip the file into
+`~/.local/share/fonts` on Linux or `~/Library/Fonts` on macOS.
