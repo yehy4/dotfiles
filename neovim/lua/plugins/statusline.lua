@@ -1,10 +1,9 @@
--- Use Lualine for status line
 require('packer').use({
   'https://github.com/nvim-lualine/lualine.nvim',
   config = function()
     local filename_section_settings = {
       'filename',
-      path = 1 -- Use relative filepath
+      path = 1 -- Use relative filepath.
     }
 
     local b_section = enable_git_features and {'branch', 'diff'} or {}

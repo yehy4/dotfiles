@@ -26,7 +26,7 @@ files/directories for the tools above; rather, they augment them (see the
    [**3.0**](https://github.com/fish-shell/fish-shell/releases/tag/3.0.0))
 1. [ripgrep](https://github.com/BurntSushi/ripgrep)
 1. A terminal that supports
-   [OSC52](https://www.reddit.com/r/vim/comments/k1ydpn/a_guide_on_how_to_copy_text_from_anywhere/).
+   [OSC 52](https://www.reddit.com/r/vim/comments/k1ydpn/a_guide_on_how_to_copy_text_from_anywhere/).
    This allows you to copy text into your local system's clipboard regardless
    of how many nested remote SSH sessions you might have.
    * Example: [kitty](https://github.com/kovidgoyal/kitty) (cross-platform) or

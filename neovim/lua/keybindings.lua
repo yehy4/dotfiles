@@ -1,21 +1,18 @@
 local keybindings = {}
 
--- Set <leader> key to space
+-- Set <leader> key to space.
 vim.g.mapleader = ' '
 
 local function map_keys(mode, keys, command)
   vim.api.nvim_set_keymap(mode, keys, command, {noremap = true})
 end
 
--- Fuzzy search
 map_keys('n', '<leader>s', ':Telescope live_grep<cr>')
--- Fuzzy search for files
 map_keys('n', '<leader>f', ':Telescope find_files<cr>')
 
--- Git
 map_keys('n', '<leader>gs', ':Telescope git_status<cr>')
 map_keys('n', '<leader>gc', ':Telescope git_commits<cr>')
-map_keys('n', '<leader>gbc', ':Telescope git_bcommits<cr>') -- Buffer commits
+map_keys('n', '<leader>gbc', ':Telescope git_bcommits<cr>') -- Buffer commits.
 map_keys('n', '<leader>gbs', ':Gitsigns stage_buffer<cr>')
 map_keys('n', '<leader>gbr', ':Gitsigns reset_buffer<cr>')
 map_keys('n', '<leader>ghs', ':Gitsigns stage_hunk<cr>')
@@ -23,13 +20,11 @@ map_keys('n', '<leader>ghu', ':Gitsigns undo_stage_hunk<cr>')
 map_keys('n', '<leader>ghr', ':Gitsigns reset_hunk<cr>')
 map_keys('n', '<leader>glb', ':Gitsigns blame_line<cr>')
 
--- Yank using OSC52 when in visual mode
 map_keys('v', '<leader>y', ':OSCYank<cr>')
 
--- Toggle directory tree
 map_keys('n', '<leader>t', ':NvimTreeToggle<cr>')
 
--- Keybindings that are only available to the buffers attached to an LSP
+-- Keybindings that are only available to the buffers attached to an LSP.
 keybindings.activate_lsp_buffer_bindings = function(bufnr)
   local function buf_map_keys(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 

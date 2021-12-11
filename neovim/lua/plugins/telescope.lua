@@ -5,10 +5,10 @@ require('packer').use {
     require('telescope').setup({
       defaults = {
         layout_config = {
-          -- Move prompt to on top of results
+          -- Move prompt on top of results.
           prompt_position = 'top'
         },
-        -- Display results from the top to bottom
+        -- Display results from the top to bottom.
         sorting_strategy = 'ascending'
       }
     })
