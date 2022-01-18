@@ -115,8 +115,29 @@ If you are using kitty as your terminal, add the following to your
 include <absolute_path_where_you_cloned_this_repo>/dotfiles/kitty/kitty.conf
 ```
 
-### JetBrains Mono Font
+### JetBrains Mono Font and Nerd Font symbols
 
-[Download](https://github.com/JetBrains/JetBrainsMono/releases/latest) the
-JetBrains Mono font with ligatures support. To install, unzip the file into
-`~/.local/share/fonts` on Linux or `~/Library/Fonts` on macOS.
+The [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font has built-in
+ligature support, and [Nerd Fonts](https://www.nerdfonts.com/) can be used to
+display icons.
+
+On Linux, run:
+
+```shell
+cd ~/.local/share/fonts
+```
+
+and on macOS, run:
+
+```shell
+cd ~/Library/Fonts
+```
+
+then run:
+
+```shell
+curl -Lo "Symbols-2048-em Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/src/glyphs/Symbols-2048-em%20Nerd%20Font%20Complete.ttf
+curl -Lo "JetBrainsMono-2.242.zip" https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip
+unzip -q -d JetBrainsMono-2.242 JetBrainsMono-2.242.zip
+rm JetBrainsMono-2.242.zip
+```
