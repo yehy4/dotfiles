@@ -111,7 +111,7 @@ packer.use({
 })
 
 -- Use Telescope for fuzzy searching.
-packer.use {
+packer.use({
   'https://github.com/nvim-telescope/telescope.nvim',
   requires = {'https://github.com/nvim-lua/plenary.nvim'},
   config = function()
@@ -126,8 +126,14 @@ packer.use {
       }
     })
   end
-}
+})
+
+if enable_git_features then
+  packer.use({
+    'https://github.com/lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function() require('gitsigns').setup() end
+  })
+end
 
 require('plugins/lsp')
-
-if enable_git_features then require('plugins/git') end
