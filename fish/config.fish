@@ -14,7 +14,10 @@ set --global --export EDITOR nvim
 # Abbreviations.
 abbr --global --add gitlog 'git log --all --graph --decorate --oneline'
 
-# Attach to a (newly-created or existing) tmux session called main.
-if not set --query TMUX  # Only execute if not already inside a tmux session.
-  tmux new-session -A -s main
+# Attach to a (newly-created or existing) tmux session called "main"if not
+# already inside a tmux session, and the terminal is not gnome-terminal (to
+# accomodate "open in terminal" when right clicking in Nautilus/Gnome Files)
+if not set --query TMUX
+  and ps -o cmd= -p (ps -o ppid= -p $fish_pid | string trim) | grep -v -q gnome-terminal
+    tmux new-session -A -s main
 end
