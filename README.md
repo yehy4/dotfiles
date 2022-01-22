@@ -50,7 +50,10 @@ local configs_path = '<absolute_path_where_you_cloned_this_repo>/dotfiles/neovim
 vim.o.runtimepath = configs_path .. ',' .. vim.o.runtimepath
 require('init')
 
--- Uncomment the following line to enable the Python workflow
+-- Uncomment the following line to enable the C/C++ workflow.
+-- require('workflows/cpp')
+
+-- Uncomment the following line to enable the Python workflow.
 -- require('workflows/python')
 ```
 
@@ -63,6 +66,11 @@ To add support for specific workflows:
 
 1. Uncomment the workflows line in your `~/.config/nvim/init.lua`
 1. Follow the workflow-specific instructions below
+
+
+##### C/C++
+
+Ensure that [clangd](https://github.com/clangd/clangd) is installed.
 
 ##### Python
 
