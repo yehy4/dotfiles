@@ -58,6 +58,9 @@ packer.use({
     -- Enable creating more than 2 splits without asking where a new split
     -- should be created.
     vim.g.nvim_tree_disable_window_picker = 1
+    -- Show the current working directory name without path at the top of the
+    -- tree.
+    vim.g.nvim_tree_root_folder_modifier = ':t'
 
     vim.g.nvim_tree_show_icons = {
       git = enable_git_features and 1 or 0,
