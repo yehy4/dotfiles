@@ -18,6 +18,7 @@ map_keys('n', '<leader>gbr', ':Gitsigns reset_buffer<cr>')
 map_keys('n', '<leader>ghs', ':Gitsigns stage_hunk<cr>')
 map_keys('n', '<leader>ghu', ':Gitsigns undo_stage_hunk<cr>')
 map_keys('n', '<leader>ghr', ':Gitsigns reset_hunk<cr>')
+map_keys('n', '<leader>ghp', ':Gitsigns preview_hunk<cr>')
 map_keys('n', '<leader>glb', ':Gitsigns blame_line<cr>')
 
 map_keys('v', '<leader>y', ':OSCYank<cr>')
