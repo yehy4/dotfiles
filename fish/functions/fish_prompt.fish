@@ -28,8 +28,8 @@ function fish_prompt
     end
   end
 
-  echo -n (set_color magenta)$user_section(set_color normal)
-  echo -n (set_color yellow) $pwd_section(set_color normal)
+  echo -n (set_color --bold d75f00)$user_section(set_color normal)
+  echo -n (set_color 87af87) $pwd_section(set_color normal)
   echo -n $git_colored_section
 
   printf '\f\r--> '
