@@ -44,8 +44,8 @@ packer.use({
 
 -- Use custom colorscheme with Tree-sitter support.
 packer.use({
-  'https://github.com/glepnir/zephyr-nvim',
-  config = function() vim.cmd('colorscheme zephyr') end
+  'https://github.com/rmehri01/onenord.nvim',
+  config = function() vim.cmd('colorscheme onenord') end
 })
 
 -- Use custom file explorer.
@@ -102,7 +102,7 @@ packer.use({
 
     require('lualine').setup({
       options = {
-        theme = 'material',
+        theme = 'onenord',
         section_separators = {left = '', right = ''},
         component_separators = ''
       },
