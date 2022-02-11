@@ -8,6 +8,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 local packer = require('packer')
+
 enable_git_features = vim.env.GIT_BASED_WORKFLOW ~= '0'
 
 packer.init()
@@ -16,127 +17,46 @@ packer.reset()
 -- Allow Packer to manage itself.
 packer.use('https://github.com/wbthomason/packer.nvim')
 
--- Enable using pretty icons.
-packer.use({'https://github.com/kyazdani42/nvim-web-devicons'})
-
--- Enable OSC 52 yanking.
-packer.use({'https://github.com/ojroques/vim-oscyank'})
+-- Use custom colorscheme with Tree-sitter support.
+require('plugins/onenord')
 
 -- Show indentation guides.
-packer.use({
-  'https://github.com/lukas-reineke/indent-blankline.nvim',
-  config = function() require("indent_blankline").setup {} end
-})
-
--- Use Tree-sitter for smarter syntax highlighting and code folding.
-packer.use({
-  'https://github.com/nvim-treesitter/nvim-treesitter',
-  run = ':TSUpdate',
-  config = function()
-    -- Enable Tree-sitter-based code folding.
-    vim.o.foldmethod = 'expr'
-    vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-
-    -- Enable Tree-sitter-based syntax highlighting.
-    require('nvim-treesitter.configs').setup({highlight = {enable = true}})
-  end
-})
-
--- Use custom colorscheme with Tree-sitter support.
-packer.use({
-  'https://github.com/rmehri01/onenord.nvim',
-  config = function() vim.cmd('colorscheme onenord') end
-})
-
--- Use custom file explorer.
-packer.use({
-  'https://github.com/kyazdani42/nvim-tree.lua',
-  commit = 'b853e1083c67a79b4eb046a112a8e12b35e9cd19',
-  config = function()
-    -- Show indentation marks for open folders.
-    vim.g.nvim_tree_indent_markers = 1
-    -- Enable creating more than 2 splits without asking where a new split
-    -- should be created.
-    vim.g.nvim_tree_disable_window_picker = 1
-    -- Show the current working directory name without path at the top of the
-    -- tree.
-    vim.g.nvim_tree_root_folder_modifier = ':t'
-
-    vim.g.nvim_tree_show_icons = {
-      git = enable_git_features and 1 or 0,
-      folders = 1,
-      files = 1,
-      folder_arrows = 0
-    }
-
-    -- Refresh tree when focus is regained. This is useful, for example,
-    -- if files are modified outside of Neovim.
-    vim.cmd('autocmd FocusGained * :NvimTreeRefresh')
-
-    require('nvim-tree').setup({
-      -- Ensure that cursor does not cover icons.
-      hijack_cursor = true,
-      -- Update the root directory of the tree when :cd is executed.
-      update_cwd = true,
-      -- Show the current buffer in the tree.
-      update_focused_file = {enable = true},
-      -- Resize the tree after opening a file. Useful when manually expanding
-      -- the tree window to view deeply-nested directory structures.
-      view = {auto_resize = true},
-      git = {enable = enable_git_features}
-    })
-  end
-})
+require('plugins/indent-blankline')
 
 -- Use custom status line.
-packer.use({
-  'https://github.com/nvim-lualine/lualine.nvim',
-  config = function()
-    local filename_section_settings = {
-      'filename',
-      path = 1 -- Use relative filepath.
-    }
+require('plugins/lualine')
 
-    local b_section = enable_git_features and {'branch', 'diff'} or {}
-    table.insert(b_section, {'diagnostics', sources = {'nvim_diagnostic'}})
+-- Use custom file explorer.
+require('plugins/nvim-tree')
 
-    require('lualine').setup({
-      options = {
-        theme = 'onenord',
-        section_separators = {left = '', right = ''},
-        component_separators = ''
-      },
-      sections = {lualine_b = b_section, lualine_c = {filename_section_settings}},
-      inactive_sections = {lualine_c = {filename_section_settings}},
-      extensions = {'nvim-tree'}
-    })
-  end
-})
+-- Use Tree-sitter for smarter syntax highlighting and code folding.
+require('plugins/nvim-treesitter')
 
 -- Use Telescope for fuzzy searching.
-packer.use({
-  'https://github.com/nvim-telescope/telescope.nvim',
-  requires = {'https://github.com/nvim-lua/plenary.nvim'},
-  config = function()
-    require('telescope').setup({
-      defaults = {
-        layout_config = {
-          -- Move prompt on top of results.
-          prompt_position = 'top'
-        },
-        -- Display results from the top to bottom.
-        sorting_strategy = 'ascending'
-      }
-    })
-  end
-})
+require('plugins/telescope')
+
+-- Enable OSC 52 yanking.
+require('plugins/vim-oscyank')
+
+-- Enable easy configuration of language servers.
+require('plugins/nvim-lspconfig')
+
+-- Enable auto completion.
+require('plugins/nvim-cmp')
 
 if enable_git_features then
-  packer.use({
-    'https://github.com/lewis6991/gitsigns.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-    config = function() require('gitsigns').setup() end
-  })
+  -- Show Git signs in window gutter.
+  require('plugins/gitsigns')
 end
 
-require('plugins/lsp')
+local lsp = {}
+
+-- The on_attach function should be called when a buffer attaches to the language server.
+lsp.lsp_on_attach = function(client, bufnr)
+  require('keybindings').activate_lsp_buffer_bindings(bufnr)
+end
+
+lsp.lsp_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol
+                                                                   .make_client_capabilities())
+
+return lsp
