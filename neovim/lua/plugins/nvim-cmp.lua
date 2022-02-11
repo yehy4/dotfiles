@@ -34,20 +34,11 @@ require('packer').use({
       TypeParameter = ""
     }
     require('snippy').setup({
-        mappings = {
-            is = {
-                ['<Tab>'] = 'expand_or_advance',
-                ['<S-Tab>'] = 'previous',
-            },
-        },
+      mappings = {is = {['<Tab>'] = 'expand_or_advance', ['<S-Tab>'] = 'previous'}}
     })
     cmp.setup({
       snippet = {expand = function(args) require('snippy').expand_snippet(args.body) end},
-      sources = cmp.config.sources({
-        {name = 'nvim_lsp'},
-        {name = 'snippy'},
-        {name = 'buffer'}
-      }),
+      sources = cmp.config.sources({{name = 'nvim_lsp'}, {name = 'snippy'}, {name = 'buffer'}}),
       formatting = {
         -- Show icon followed by source
         format = function(entry, vim_item)
