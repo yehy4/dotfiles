@@ -54,6 +54,13 @@ local lsp = {}
 -- The on_attach function should be called when a buffer attaches to the language server.
 lsp.lsp_on_attach = function(client, bufnr)
   require('keybindings').activate_lsp_buffer_bindings(bufnr)
+
+  -- Attempt to highlight the symbol under the cursor in the document.
+  if client.resolved_capabilities.document_highlight then
+    vim.api.nvim_command('autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()')
+    vim.api.nvim_command('autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()')
+  end
+
 end
 
 lsp.lsp_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol

@@ -68,6 +68,9 @@ vim.o.linebreak = true -- Prevent a word from getting split into two.
 -- Disable showing current mode below status line.
 vim.o.showmode = false
 
+-- Increase the speed at which CursorHold auto command fires.
+vim.o.updatetime = 100
+
 -- Automatically resize windows when available area is changed (e.g. when the
 -- terminal window is resized).
 vim.cmd('autocmd VimResized * wincmd =')
