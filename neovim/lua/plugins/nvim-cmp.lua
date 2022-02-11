@@ -2,7 +2,7 @@ require('packer').use({
   'https://github.com/hrsh7th/nvim-cmp',
   requires = {
     'https://github.com/hrsh7th/cmp-nvim-lsp', 'https://github.com/hrsh7th/cmp-buffer',
-    'https://github.com/hrsh7th/vim-vsnip'
+    'https://github.com/dcampos/nvim-snippy', 'https://github.com/dcampos/cmp-snippy'
   },
   config = function()
     local cmp = require('cmp')
@@ -33,9 +33,21 @@ require('packer').use({
       Operator = "",
       TypeParameter = ""
     }
+    require('snippy').setup({
+        mappings = {
+            is = {
+                ['<Tab>'] = 'expand_or_advance',
+                ['<S-Tab>'] = 'previous',
+            },
+        },
+    })
     cmp.setup({
-      snippet = {expand = function(args) vim.fn["vsnip#anonymous"](args.body) end},
-      sources = cmp.config.sources({{name = 'nvim_lsp'}, {name = 'buffer'}}),
+      snippet = {expand = function(args) require('snippy').expand_snippet(args.body) end},
+      sources = cmp.config.sources({
+        {name = 'nvim_lsp'},
+        {name = 'snippy'},
+        {name = 'buffer'}
+      }),
       formatting = {
         -- Show icon followed by source
         format = function(entry, vim_item)
