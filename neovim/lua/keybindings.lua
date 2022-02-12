@@ -21,7 +21,7 @@ map_keys('n', '<leader>ghr', '<cmd>Gitsigns reset_hunk<cr>')
 map_keys('n', '<leader>ghp', '<cmd>Gitsigns preview_hunk<cr>')
 map_keys('n', '<leader>glb', '<cmd>Gitsigns blame_line<cr>')
 
-map_keys('v', '<leader>y', '<cmd>OSCYank<cr>')
+map_keys('v', '<leader>y', ':OSCYank<cr>')
 
 map_keys('n', '<leader>t', '<cmd>NvimTreeToggle<cr>')
 
