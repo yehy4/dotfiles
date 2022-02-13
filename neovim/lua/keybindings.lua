@@ -41,7 +41,7 @@ keybindings.activate_lsp_buffer_bindings = function(bufnr)
   buf_map_keys('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
   buf_map_keys('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
   buf_map_keys('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-  buf_map_keys('n', '<leader>lD', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
+  buf_map_keys('n', '<leader>lD', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 end
 
 return keybindings
