@@ -20,7 +20,7 @@ files/directories for the tools above; rather, they augment them (see the
 
 ## Prerequisites
 1. [neovim](https://github.com/neovim/neovim) >=
-   [**0.5**](https://github.com/neovim/neovim/releases/tag/v0.5.0)
+   [**0.6**](https://github.com/neovim/neovim/releases/tag/v0.6.0)
 1. [tmux](https://github.com/tmux/tmux)
 1. [fish shell](https://github.com/fish-shell/fish-shell) (recommended >=
    [**3.0**](https://github.com/fish-shell/fish-shell/releases/tag/3.0.0))
