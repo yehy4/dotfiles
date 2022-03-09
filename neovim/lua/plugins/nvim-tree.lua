@@ -1,13 +1,9 @@
 require('packer').use({
   'https://github.com/kyazdani42/nvim-tree.lua',
-  commit = 'b853e1083c67a79b4eb046a112a8e12b35e9cd19',
   requires = {'https://github.com/kyazdani42/nvim-web-devicons'},
   config = function()
     -- Show indentation marks for open folders.
     vim.g.nvim_tree_indent_markers = 1
-    -- Enable creating more than 2 splits without asking where a new split
-    -- should be created.
-    vim.g.nvim_tree_disable_window_picker = 1
     -- Show the current working directory name without path at the top of the
     -- tree.
     vim.g.nvim_tree_root_folder_modifier = ':t'
@@ -33,7 +29,12 @@ require('packer').use({
       -- Resize the tree after opening a file. Useful when manually expanding
       -- the tree window to view deeply-nested directory structures.
       view = {auto_resize = true},
-      git = {enable = enable_git_features}
+      git = {enable = enable_git_features},
+      actions = {
+        -- Enable creating more than 2 splits without asking where a new split
+        -- should be created.
+        open_file = {window_picker = {enable = false}}
+      }
     })
   end
 })
