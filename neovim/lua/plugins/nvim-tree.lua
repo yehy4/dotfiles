@@ -27,7 +27,7 @@ require('packer').use({
       -- Resize the tree after opening a file. Useful when manually expanding
       -- the tree window to view deeply-nested directory structures.
       view = {auto_resize = true},
-      git = {enable = enable_git_features},
+      git = {enable = enable_git_features, ignore = false},
       actions = {
         -- Enable creating more than 2 splits without asking where a new split
         -- should be created.
