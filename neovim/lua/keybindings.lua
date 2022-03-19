@@ -23,7 +23,8 @@ map_keys('n', '<leader>glb', '<cmd>Gitsigns blame_line<cr>')
 
 map_keys('v', '<leader>y', ':OSCYank<cr>')
 
-map_keys('n', '<leader>t', '<cmd>NvimTreeToggle<cr>')
+map_keys('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>')
+map_keys('n', '<leader>ef', '<cmd>NvimTreeFindFile<cr>')
 
 -- Keybindings that are only available to the buffers attached to an LSP.
 keybindings.activate_lsp_buffer_bindings = function(bufnr)
