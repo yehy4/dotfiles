@@ -21,9 +21,6 @@ vim.o.expandtab = true
 -- Ensure indents are rounded to a multiple of shiftwidth.
 vim.o.shiftround = true
 
--- Enable code folding based on indent level.
-vim.o.foldmethod = 'indent'
-
 -- Ensure code is not folded by default when opening a file.
 vim.o.foldenable = false
 
