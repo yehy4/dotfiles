@@ -5,12 +5,11 @@ vim.o.termguicolors = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Instead of failing a command because of unsaved changes, create a
--- dialogue asking if you wish to save changed files.
+-- Instead of failing a command because of unsaved changes, create a dialogue asking if you wish to
+-- save changed files.
 vim.o.confirm = true
 
--- Use relative line numbers for all lines but show absolute line number for
--- the current line.
+-- Use relative line numbers for all lines but show absolute line number for the current line.
 vim.o.number = true
 vim.o.relativenumber = true
 
@@ -74,8 +73,8 @@ vim.o.updatetime = 100
 -- Enable mouse to prevent tmux from capturing mouse actions in neovim panes.
 vim.o.mouse = "a"
 
--- Automatically resize windows when available area is changed (e.g. when the
--- terminal window is resized).
+-- Automatically resize windows when available area is changed (e.g. when the terminal window is
+-- resized).
 vim.cmd('autocmd VimResized * wincmd =')
 
 -- Highlight trailing spaces.
