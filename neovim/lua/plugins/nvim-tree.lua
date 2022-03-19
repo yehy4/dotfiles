@@ -20,6 +20,8 @@ require('packer').use({
       update_cwd = true,
       git = {enable = enable_git_features, ignore = false},
       actions = {
+        -- Change directory for all open windows when directory is changed in tree.
+        change_dir = {global = true},
         open_file = {
           -- Resize the tree after opening a file. Useful when manually expanding
           -- the tree window to view deeply-nested directory structures.
