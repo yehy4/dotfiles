@@ -4,16 +4,10 @@ require('packer').use({
   config = function()
     -- Show indentation marks for open folders.
     vim.g.nvim_tree_indent_markers = 1
+
     -- Show the current working directory name without path at the top of the
     -- tree.
     vim.g.nvim_tree_root_folder_modifier = ':t'
-
-    vim.g.nvim_tree_show_icons = {
-      git = enable_git_features and 1 or 0,
-      folders = 1,
-      files = 1,
-      folder_arrows = 0
-    }
 
     -- Refresh tree when focus is regained. This is useful, for example,
     -- if files are modified outside of Neovim.
