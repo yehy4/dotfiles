@@ -26,6 +26,9 @@ map_keys('v', '<leader>y', ':OSCYank<cr>')
 map_keys('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>')
 map_keys('n', '<leader>ef', '<cmd>NvimTreeFindFile<cr>')
 
+map_keys('n', '<leader>ps', '<cmd>PackerSync<cr>')
+map_keys('n', '<leader>pc', '<cmd>PackerCompile<cr>')
+
 -- Keybindings that are only available to the buffers attached to an LSP.
 keybindings.activate_lsp_buffer_bindings = function(bufnr)
   local function buf_map_keys(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
