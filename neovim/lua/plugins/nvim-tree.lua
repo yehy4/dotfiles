@@ -2,9 +2,6 @@ require('packer').use({
   'https://github.com/kyazdani42/nvim-tree.lua',
   requires = {'https://github.com/kyazdani42/nvim-web-devicons'},
   config = function()
-    -- Show indentation marks for open folders.
-    vim.g.nvim_tree_indent_markers = 1
-
     -- Show the current working directory name without path at the top of the tree.
     vim.g.nvim_tree_root_folder_modifier = ':t'
 
@@ -28,7 +25,9 @@ require('packer').use({
           -- Enable creating more than 2 splits without asking where a new split should be created.
           window_picker = {enable = false}
         }
-      }
+      },
+      -- Show indentation marks for open folders.
+      renderer = {indent_markers = {enable = true}}
     })
   end
 })
