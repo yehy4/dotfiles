@@ -1,0 +1,34 @@
+# Keep 1 million lines of history.
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+# Share history among concurrent shells.
+setopt share_history
+# Record timestamp of command in HISTFILE.
+setopt extended_history
+# Delete duplicates first when HISTFILE size exceeds HISTSIZE.
+setopt hist_expire_dups_first
+
+# Show completion menu if there is more than one match.
+zstyle ':completion:*' menu select=1
+# Insert the full unambiguous prefix in a term before triggering the completion menu.
+zstyle ':completion:*' insert-unambiguous true
+# Use colors when displaying the completion menu for files and directories.
+eval `dircolors` # Set LS_COLORS environment variable
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# Enable case-insensitive completion.
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+autoload -Uz compinit && compinit
+zmodload zsh/complist
+
+# Use vi keybindings.
+bindkey -v
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# Display a shortened verion of the current in the prompt.
+PROMPT='[%F{#D08F70}%?%f] %f$ '
+RPROMPT='%F{#88C0D0}%~'
