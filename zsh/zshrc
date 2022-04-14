@@ -6,6 +6,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+# Decrease timeout waiting for key combinations (default is 40).
+KEYTIMEOUT=1
+
 # Share history among concurrent shells.
 setopt share_history
 # Record timestamp of command in HISTFILE.
