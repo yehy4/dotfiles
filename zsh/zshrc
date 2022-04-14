@@ -9,6 +9,9 @@ SAVEHIST=1000000
 # Decrease timeout waiting for key combinations (default is 40).
 KEYTIMEOUT=1
 
+# Use neovim as the default editor.
+export EDITOR=nvim
+
 # Share history among concurrent shells.
 setopt share_history
 # Record timestamp of command in HISTFILE.
