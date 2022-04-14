@@ -19,6 +19,9 @@ setopt hist_expire_dups_first
 # Correct mis-spelled commands.
 setopt correctall
 
+# Disable terminal beeps during completion.
+unsetopt list_beep
+
 # Show completion menu if there is more than one match.
 zstyle ':completion:*' menu select=1
 # Insert the full unambiguous prefix in a term before triggering the completion menu.
@@ -37,6 +40,10 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
+
+# Search history by navigating up and down in vi normal mode.
+bindkey -M vicmd 'k' history-beginning-search-backward
+bindkey -M vicmd 'j' history-beginning-search-forward
 
 source `dirname $0`/zsh-autosuggestions/zsh-autosuggestions.zsh
 source `dirname $0`/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
