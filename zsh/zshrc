@@ -32,3 +32,5 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # Display a shortened verion of the current in the prompt.
 PROMPT='[%F{#D08F70}%?%f] %f$ '
 RPROMPT='%F{#88C0D0}%~'
+
+alias ls='ls --color'
