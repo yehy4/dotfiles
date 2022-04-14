@@ -39,5 +39,6 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
 source `dirname $0`/zsh-autosuggestions/zsh-autosuggestions.zsh
+source `dirname $0`/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias ls='ls --color'
