@@ -37,3 +37,5 @@ PROMPT='[%F{#D08F70}%?%f] %f$ '
 RPROMPT='%F{#88C0D0}%~'
 
 alias ls='ls --color'
+
+source `dirname $0`/zsh-autosuggestions/zsh-autosuggestions.zsh
