@@ -52,3 +52,10 @@ source `dirname $0`/zsh-autosuggestions/zsh-autosuggestions.zsh
 source `dirname $0`/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias ls='ls --color'
+
+# Attach to a (newly-created or existing) tmux session called "main" if not
+# already inside a tmux session, and the terminal is not gnome-terminal (to
+# accomodate "open in terminal" when right clicking in Nautilus/Gnome Files).
+if [ -z "$TMUX" ] && ps -o cmd= -p $(ps -o ppid= -p $$) | grep -v -q gnome-terminal; then
+  tmux new-session -A -s main
+fi
