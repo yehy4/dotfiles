@@ -9,8 +9,7 @@ This workflow relies on the following tools:
 * [neovim](https://github.com/neovim/neovim) for text-editing
 * [ripgrep](https://github.com/BurntSushi/ripgrep) for quick searching
 * [tmux](https://github.com/tmux/tmux) for terminal multiplexing
-* [fish shell](https://github.com/fish-shell/fish-shell) for a modern shell
-  with low configuration overhead.
+* [zsh](https://github.com/zsh-users/zsh) for a configurable shell
 
 Because each development workflow is slightly different, these configuration
 files are designed with extensibility in mind. For example, the configuration
@@ -22,8 +21,7 @@ files/directories for the tools above; rather, they augment them (see the
 1. [neovim](https://github.com/neovim/neovim) >=
    [**0.6**](https://github.com/neovim/neovim/releases/tag/v0.6.0)
 1. [tmux](https://github.com/tmux/tmux)
-1. [fish shell](https://github.com/fish-shell/fish-shell) (recommended >=
-   [**3.0**](https://github.com/fish-shell/fish-shell/releases/tag/3.0.0))
+1. [zsh](https://github.com/zsh-users/zsh)
 1. [ripgrep](https://github.com/BurntSushi/ripgrep)
 1. A terminal that supports
    [OSC 52](https://www.reddit.com/r/vim/comments/k1ydpn/a_guide_on_how_to_copy_text_from_anywhere/).
@@ -85,34 +83,25 @@ Add the following to your `~/.tmux.conf` file:
 source <absolute_path_where_you_cloned_this_repo>/dotfiles/tmux/tmux.conf
 ```
 
-### fish shell
+### zsh
 
-Add the following to your `~/.config/fish/config.fish` file:
+Add the following to your `~/.zshrc` file:
 
-```fish
-set --global --export GIT_BASED_WORKFLOW 1
-source <absolute_path_where_you_cloned_this_repo>/dotfiles/fish/config.fish
+```shell
+export GIT_BASED_WORKFLOW 1
+source <absolute_path_where_you_cloned_this_repo>/dotfiles/zsh/zshrc
 ```
-<details>
-  <summary>Setting fish as your default interactive shell</summary>
 
-  Add the following to the end of your `~/.bashrc`:
+Run the following to set zsh as your default shell (make sure to logout and log
+back in - or restart - afterwards):
 
-  ```shell
-  # If running an interactive shell and if fish shell is installed, start
-  # fish. If the shell that called bash is already a fish shell, then do not
-  # drop into a fish shell. This allows the user to drop into a bash shell from
-  # within a fish shell.
-  FISH_PATH="$(which fish)"
-  if [[ "$-" =~ i && -x "${FISH_PATH}" && "${SHELL}" != "${FISH_PATH}" ]]; then
-    exec env SHELL="${FISH_PATH}" "${FISH_PATH}" -i
-  fi
-  ```
-</details>
+```shell
+$ chsh -s $(`which zsh`) $USER
+```
 
 If your workflow does not involve using Git, change the value of
 `GIT_BASED_WORKFLOW` above to `0` instead of `1`. This could improve the
-performance of neovim and fish.
+performance of neovim.
 
 ### kitty
 
