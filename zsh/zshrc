@@ -42,12 +42,12 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '|S'
 zstyle ':vcs_info:*' unstagedstr '|U'
 # Format the vcs_info_msg_0_ variable.
-zstyle ':vcs_info:git*' formats "%f(%F{#88C0D0}%b%f%F{#EBCB8B}%a%m%u%c%f)"
+zstyle ':vcs_info:git*' formats "%f(%F{#88C0D0}%b%f%F{#EBCB8B}%a%m%u%c%f) "
 precmd() { vcs_info }
 
 # Set the prompt.
 setopt prompt_subst # Allow substitutions in the prompt to be able to use variables.
-PROMPT='[%F{#D08F70}%?%f] ${vcs_info_msg_0_} $ '
+PROMPT='[%F{#D08F70}%?%f] ${vcs_info_msg_0_}$ '
 RPROMPT='%F{#88C0D0}%~'
 
 # Use vi keybindings.
