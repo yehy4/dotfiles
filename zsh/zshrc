@@ -36,14 +36,16 @@ zmodload zsh/complist
 
 # Load version control information.
 # See https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information.
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '|S'
-zstyle ':vcs_info:*' unstagedstr '|U'
-# Format the vcs_info_msg_0_ variable.
-zstyle ':vcs_info:git*' formats "%f(%F{#88C0D0}%b%f%F{#EBCB8B}%a%m%u%c%f) "
-precmd() { vcs_info }
+if [[ $GIT_BASED_WORKFLOW == 1 ]]; then
+  autoload -Uz vcs_info
+  zstyle ':vcs_info:*' enable git svn
+  zstyle ':vcs_info:*' check-for-changes true
+  zstyle ':vcs_info:*' stagedstr '|S'
+  zstyle ':vcs_info:*' unstagedstr '|U'
+  # Format the vcs_info_msg_0_ variable.
+  zstyle ':vcs_info:git*' formats "%f(%F{#88C0D0}%b%f%F{#EBCB8B}%a%m%u%c%f) "
+  precmd() { vcs_info }
+fi
 
 # Set the prompt.
 setopt prompt_subst # Allow substitutions in the prompt to be able to use variables.
