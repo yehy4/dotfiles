@@ -58,6 +58,7 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey '^?' backward-delete-char # See https://unix.stackexchange.com/a/290403.
 
 source `dirname $0`/zsh-autosuggestions/zsh-autosuggestions.zsh
 source `dirname $0`/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
