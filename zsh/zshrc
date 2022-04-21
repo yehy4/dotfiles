@@ -47,7 +47,7 @@ precmd() { vcs_info }
 
 # Set the prompt.
 setopt prompt_subst # Allow substitutions in the prompt to be able to use variables.
-PROMPT='%B%F{#A3BE8C}$%f '
+PROMPT='%B%F{#A3BE8C}$%b%f '
 RPROMPT='${vcs_info_msg_0_}%F{#88C0D0}%~'
 
 # Use vi keybindings.
