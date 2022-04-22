@@ -60,6 +60,22 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey '^?' backward-delete-char # See https://unix.stackexchange.com/a/290403.
 
+# Use a beam cursor when in vi insert mode and a block cursor in normal mode.
+# Using these functions is only explicitly needed when running zsh inside tmux.
+# Otherwise, this behavior is already built into zsh.
+# See https://superuser.com/a/1501674
+function _set_block_cursor() { echo -ne '\e[2 q' }
+function _set_beam_cursor() { echo -ne '\e[6 q' }
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]]; then
+      _set_block_cursor
+  else
+      _set_beam_cursor
+  fi
+}
+zle -N zle-keymap-select
+precmd_functions+=(_set_beam_cursor) # Use beam cursor when starting new prompt.
+
 source `dirname $0`/zsh-autosuggestions/zsh-autosuggestions.zsh
 source `dirname $0`/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
