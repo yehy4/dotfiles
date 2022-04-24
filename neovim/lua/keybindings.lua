@@ -15,6 +15,7 @@ map_keys('n', '<leader>gc', '<cmd>Telescope git_commits<cr>')
 map_keys('n', '<leader>gbc', '<cmd>Telescope git_bcommits<cr>') -- Buffer commits.
 map_keys('n', '<leader>gbs', '<cmd>Gitsigns stage_buffer<cr>')
 map_keys('n', '<leader>gbr', '<cmd>Gitsigns reset_buffer<cr>')
+map_keys('n', '<leader>ghn', '<cmd>Gitsigns next_hunk<cr>')
 map_keys('n', '<leader>ghs', '<cmd>Gitsigns stage_hunk<cr>')
 map_keys('n', '<leader>ghu', '<cmd>Gitsigns undo_stage_hunk<cr>')
 map_keys('n', '<leader>ghr', '<cmd>Gitsigns reset_hunk<cr>')
