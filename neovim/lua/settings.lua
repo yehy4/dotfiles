@@ -69,8 +69,8 @@ vim.o.updatetime = 100
 
 -- Enable mouse without clicks to prevent tmux from capturing mouse actions in neovim panes.
 vim.o.mouse = 'a'
-vim.api.nvim_set_keymap('i', '<LeftMouse>', '<Nop>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<LeftMouse>', '<Nop>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<LeftMouse>', '<Nop>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<LeftMouse>', '<Nop>', {noremap = true})
 
 -- Automatically resize windows when available area is changed (e.g. when the terminal window is
 -- resized).
