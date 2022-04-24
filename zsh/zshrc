@@ -19,6 +19,10 @@ setopt hist_ignore_all_dups
 # Correct mis-spelled commands.
 setopt correctall
 
+# Prevent prevent commands from failing due to no globbing matches. See
+# https://unix.stackexchange.com/a/310553.
+unsetopt nomatch
+
 # Disable terminal beeps during completion.
 unsetopt list_beep
 
