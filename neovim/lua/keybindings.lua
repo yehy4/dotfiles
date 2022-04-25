@@ -3,50 +3,43 @@ local keybindings = {}
 -- Set <leader> key to space.
 vim.g.mapleader = ' '
 
-local function map_keys(mode, keys, command)
-  vim.api.nvim_set_keymap(mode, keys, command, {noremap = true})
-end
+vim.keymap.set('n', '<leader>s', '<cmd>Telescope live_grep<cr>')
+vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>')
 
-map_keys('n', '<leader>s', '<cmd>Telescope live_grep<cr>')
-map_keys('n', '<leader>f', '<cmd>Telescope find_files<cr>')
+vim.keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<cr>')
+vim.keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits<cr>')
+vim.keymap.set('n', '<leader>gbc', '<cmd>Telescope git_bcommits<cr>') -- Buffer commits.
+vim.keymap.set('n', '<leader>gbs', '<cmd>Gitsigns stage_buffer<cr>')
+vim.keymap.set('n', '<leader>gbr', '<cmd>Gitsigns reset_buffer<cr>')
+vim.keymap.set('n', '<leader>ghn', '<cmd>Gitsigns next_hunk<cr>')
+vim.keymap.set('n', '<leader>ghs', '<cmd>Gitsigns stage_hunk<cr>')
+vim.keymap.set('n', '<leader>ghu', '<cmd>Gitsigns undo_stage_hunk<cr>')
+vim.keymap.set('n', '<leader>ghr', '<cmd>Gitsigns reset_hunk<cr>')
+vim.keymap.set('n', '<leader>ghp', '<cmd>Gitsigns preview_hunk<cr>')
+vim.keymap.set('n', '<leader>glb', '<cmd>Gitsigns blame_line<cr>')
 
-map_keys('n', '<leader>gs', '<cmd>Telescope git_status<cr>')
-map_keys('n', '<leader>gc', '<cmd>Telescope git_commits<cr>')
-map_keys('n', '<leader>gbc', '<cmd>Telescope git_bcommits<cr>') -- Buffer commits.
-map_keys('n', '<leader>gbs', '<cmd>Gitsigns stage_buffer<cr>')
-map_keys('n', '<leader>gbr', '<cmd>Gitsigns reset_buffer<cr>')
-map_keys('n', '<leader>ghn', '<cmd>Gitsigns next_hunk<cr>')
-map_keys('n', '<leader>ghs', '<cmd>Gitsigns stage_hunk<cr>')
-map_keys('n', '<leader>ghu', '<cmd>Gitsigns undo_stage_hunk<cr>')
-map_keys('n', '<leader>ghr', '<cmd>Gitsigns reset_hunk<cr>')
-map_keys('n', '<leader>ghp', '<cmd>Gitsigns preview_hunk<cr>')
-map_keys('n', '<leader>glb', '<cmd>Gitsigns blame_line<cr>')
+vim.keymap.set('v', '<leader>y', ':OSCYank<cr>')
 
-map_keys('v', '<leader>y', ':OSCYank<cr>')
+vim.keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>ef', '<cmd>NvimTreeFindFile<cr>')
 
-map_keys('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>')
-map_keys('n', '<leader>ef', '<cmd>NvimTreeFindFile<cr>')
-
-map_keys('n', '<leader>ps', '<cmd>PackerSync<cr>')
-map_keys('n', '<leader>pc', '<cmd>PackerCompile<cr>')
+vim.keymap.set('n', '<leader>ps', '<cmd>PackerSync<cr>')
+vim.keymap.set('n', '<leader>pc', '<cmd>PackerCompile<cr>')
 
 -- Keybindings that are only available to the buffers attached to an LSP.
 keybindings.activate_lsp_buffer_bindings = function(bufnr)
-  local function buf_map_keys(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
-  local opts = {noremap = true, silent = true}
-  buf_map_keys('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
-  buf_map_keys('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-  buf_map_keys('n', '<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-  buf_map_keys('i', '<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-  buf_map_keys('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-  buf_map_keys('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-  buf_map_keys('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-  buf_map_keys('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-  buf_map_keys('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-  buf_map_keys('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-  buf_map_keys('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-  buf_map_keys('n', '<leader>lD', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+  local opts = {buffer = bufnr}
+  vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting, opts)
+  vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', '<leader>lt', vim.lsp.buf.type_definition, opts)
+  vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, opts)
+  vim.keymap.set('n', '<leader>lR', vim.lsp.buf.references, opts)
+  vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', '<leader>lD', vim.diagnostic.open_float, opts)
+  vim.keymap.set('n', '<leader>ldc', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', '<leader>ldf', vim.lsp.buf.definition, opts)
+  vim.keymap.set({'n', 'i'}, '<leader>ls', vim.lsp.buf.signature_help, opts)
 end
 
 return keybindings
