@@ -57,8 +57,10 @@ lsp.lsp_on_attach = function(client, bufnr)
 
   -- Attempt to highlight the symbol under the cursor in the document.
   if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_command('autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()')
-    vim.api.nvim_command('autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()')
+    vim.api.nvim_create_autocmd('CursorHold',
+                                {buffer = bufnr, callback = vim.lsp.buf.document_highlight})
+    vim.api.nvim_create_autocmd('CursorMoved',
+                                {buffer = bufnr, callback = vim.lsp.buf.clear_references})
   end
 
 end

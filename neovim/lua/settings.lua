@@ -73,8 +73,9 @@ vim.keymap.set({'n', 'i'}, '<LeftMouse>', '<Nop>')
 
 -- Automatically resize windows when available area is changed (e.g. when the terminal window is
 -- resized).
-vim.cmd('autocmd VimResized * wincmd =')
+vim.api.nvim_create_autocmd('VimResized', {command = 'wincmd ='})
 
 -- Highlight trailing spaces.
-vim.cmd('autocmd ColorScheme * highlight TrailingSpaces ctermbg=yellow guibg=yellow')
-vim.cmd('autocmd VimEnter,WinEnter * match TrailingSpaces /\\s\\+$/')
+vim.api.nvim_create_autocmd('ColorScheme',
+                            {command = 'highlight TrailingSpaces ctermbg=yellow guibg=yellow'})
+vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter'}, {command = 'match TrailingSpaces /\\s\\+$/'})

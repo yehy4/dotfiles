@@ -7,7 +7,7 @@ require('packer').use({
 
     -- Refresh tree when focus is regained. This is useful, for example, if files are modified
     -- outside of Neovim.
-    vim.cmd('autocmd FocusGained * :NvimTreeRefresh')
+    vim.api.nvim_create_autocmd('FocusGained', {command = ':NvimTreeRefresh'})
 
     require('nvim-tree').setup({
       -- Ensure that cursor does not cover icons.
