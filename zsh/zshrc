@@ -17,14 +17,17 @@ setopt extended_history
 setopt hist_ignore_all_dups
 
 # Correct mis-spelled commands.
-setopt correctall
+setopt correct_all
 
 # Prevent prevent commands from failing due to no globbing matches. See
 # https://unix.stackexchange.com/a/310553.
-unsetopt nomatch
+unsetopt no_match
 
 # Disable terminal beeps during completion.
 unsetopt list_beep
+
+# Enable completion from both sides.
+setopt complete_in_word
 
 # Show completion menu if there is more than one match.
 zstyle ':completion:*' menu select=1
