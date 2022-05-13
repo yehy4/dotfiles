@@ -11,10 +11,7 @@ require('packer').use({
         -- Move prompt on top of results.
         layout_config = {prompt_position = 'top'},
         -- Display results from the top to bottom.
-        sorting_strategy = 'ascending',
-        -- Use 'BRAILLE PATTERN BLANK' (U+2800) unicode character instead of blank space to prevent
-        -- the blank space from being highlighted as a trailing space.
-        prompt_prefix = '>⠀'
+        sorting_strategy = 'ascending'
       }
     })
   end

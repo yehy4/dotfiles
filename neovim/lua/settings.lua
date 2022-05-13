@@ -78,4 +78,6 @@ vim.api.nvim_create_autocmd('VimResized', {command = 'wincmd ='})
 -- Highlight trailing spaces.
 vim.api.nvim_create_autocmd('ColorScheme',
                             {command = 'highlight TrailingSpaces ctermbg=yellow guibg=yellow'})
-vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter'}, {command = 'match TrailingSpaces /\\s\\+$/'})
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function() if vim.o.buftype == "" then vim.cmd('match TrailingSpaces /\\s\\+$/') end end
+})
