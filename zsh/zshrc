@@ -67,6 +67,13 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey '^?' backward-delete-char # See https://unix.stackexchange.com/a/290403.
 
+# Navigate history using k and j.
+autoload -U up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey -M vicmd 'k' up-line-or-beginning-search
+bindkey -M vicmd 'j' down-line-or-beginning-search
+
 # Use a beam cursor when in vi insert mode and a block cursor in normal mode.
 # Using these functions is only explicitly needed when running zsh inside tmux.
 # Otherwise, this behavior is already built into zsh.
