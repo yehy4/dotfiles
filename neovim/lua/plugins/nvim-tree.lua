@@ -3,7 +3,7 @@ require('packer').use({
   requires = {'https://github.com/kyazdani42/nvim-web-devicons'},
   config = function()
     -- Refresh tree when focus is regained. This is useful, for example, if files are modified
-    -- outside of Neovim.
+    -- outside of neovim.
     vim.api.nvim_create_autocmd('FocusGained', {command = ':NvimTreeRefresh'})
 
     require('nvim-tree').setup({
