@@ -48,6 +48,9 @@ local configs_path = '<absolute_path_where_you_cloned_this_repo>/dotfiles/neovim
 vim.o.runtimepath = configs_path .. ',' .. vim.o.runtimepath
 require('init')
 
+-- Uncomment the following line to enable the Ansible workflow.
+-- require('workflows/ansible')
+
 -- Uncomment the following line to enable the C/C++ workflow.
 -- require('workflows/cpp')
 
@@ -65,6 +68,10 @@ To add support for specific workflows:
 1. Uncomment the workflows line in your `~/.config/nvim/init.lua`
 1. Follow the workflow-specific instructions below
 
+##### Ansible
+
+Ensure that [Ansible Language Server](https://github.com/ansible/ansible-language-server) is
+installed.
 
 ##### C/C++
 
