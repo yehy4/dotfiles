@@ -54,6 +54,9 @@ require('init')
 -- Uncomment the following line to enable the C/C++ workflow.
 -- require('workflows/cpp')
 
+-- Uncomment the following line to enable the Dart workflow.
+-- require('workflows/dart')
+
 -- Uncomment the following line to enable the Python workflow.
 -- require('workflows/python')
 ```
@@ -70,12 +73,17 @@ To add support for specific workflows:
 
 ##### Ansible
 
-Ensure that [Ansible Language Server](https://github.com/ansible/ansible-language-server) is
-installed.
+Ensure that [Ansible Language
+Server](https://github.com/ansible/ansible-language-server) is installed.
 
 ##### C/C++
 
 Ensure that [clangd](https://github.com/clangd/clangd) is installed.
+
+##### Dart
+
+Aside from enusring that Dart is installed, no additional configuration is
+needed.
 
 ##### Python
 
