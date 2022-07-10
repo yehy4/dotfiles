@@ -17,7 +17,7 @@ setopt extended_history
 setopt hist_ignore_all_dups
 
 # Correct mis-spelled commands.
-setopt correct_all
+setopt correct
 
 # Prevent prevent commands from failing due to no globbing matches. See
 # https://unix.stackexchange.com/a/310553.
